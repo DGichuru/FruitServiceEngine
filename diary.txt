@@ -1,0 +1,49 @@
+Development Diary – Fruit Service Engine (RMI + Java Servlets)
+
+
+     Project Analysis & Setup
+- Analyzed requirements for a distributed fruit service engine.
+- Chose Java RMI and Java Servlets as the implementation architecture.
+- Sketched out system architecture and listed required components.
+- Created initial project folder structure based on logical separation (client/server/web).
+- Initialized source folders and added placeholder class files.
+
+   RMI Backend Implementation
+- Defined Task interface for distributed computation (`Task.java`).
+- Implemented backend logic for tasks:
+  • AddFruitPrice
+  • UpdateFruitPrice
+  • DeleteFruitPrice
+  • CalFruitCost
+  • CalculateCost
+- Created FruitPriceTable as a thread-safe shared data structure using ConcurrentHashMap.
+- Developed Compute interface and implemented FruitComputeEngine to expose task execution.
+
+     RMI Client Registry & Testing
+- Created client-side RMI connector: `FruitComputeTaskRegistry.java`.
+- Simulated input for five task types via command-line interaction.
+- Successfully tested RMI communication between client and server using localhost:1099.
+
+    Servlet Integration
+- Developed five Java servlets:
+  • AddFruitServlet
+  • UpdateFruitServlet
+  • DeleteFruitServlet
+  • CalcCostServlet
+  • PrintReceiptServlet
+- Each servlet parses HTTP POST data, connects to RMI engine, and returns results.
+- Built deployment descriptor `web.xml` with correct servlet mappings.
+- Packaged `.war` for deployment and deployed on Apache Tomcat.
+
+    Testing and Documentation
+- Created Postman test cases to validate servlet endpoints.
+- Verified responses for each task across RMI and HTTP boundaries.
+- Wrote README.md with architecture, run instructions, and sample inputs.
+
+
+NOTES:
+- All testing done locally using localhost and default RMI port 1099.
+- Security policy for RMI applied using `rmi.policy` granting AllPermission for simplicity.
+- Logging and error handling used for debugging where needed.
+
+

@@ -1,0 +1,116 @@
+// This is a Postman collection for the FruitServiceEngine project.
+// It includes endpoints for adding, updating, deleting fruits, calculating costs, and printing receipts.
+// File: postman_collection.json
+// This collection is designed to work with the FruitServiceEngine application running on localhost:8080
+{
+  "info": {
+    "name": "FruitServiceEngine",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Add Fruit",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {"key": "fruit", "value": "Mango"},
+            {"key": "price", "value": "4.00"}
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/fruitserviceengine/addFruit",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["fruitserviceengine", "addFruit"]
+        }
+      }
+    },
+    {
+      "name": "Update Fruit",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {"key": "fruit", "value": "Mango"},
+            {"key": "price", "value": "6.00"}
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/fruitserviceengine/updateFruit",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["fruitserviceengine", "updateFruit"]
+        }
+      }
+    },
+    {
+      "name": "Delete Fruit",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {"key": "fruit", "value": "Mango"}
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/fruitserviceengine/deleteFruit",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["fruitserviceengine", "deleteFruit"]
+        }
+      }
+    },
+    {
+      "name": "Calculate Cost",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {"key": "fruit", "value": "Mango"},
+            {"key": "quantity", "value": "3"}
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/fruitserviceengine/calcCost",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["fruitserviceengine", "calcCost"]
+        }
+      }
+    },
+    {
+      "name": "Print Receipt",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {"key": "cashier", "value": "Daniel"},
+            {"key": "amountGiven", "value": "500"}
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/fruitserviceengine/printReceipt",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["fruitserviceengine", "printReceipt"]
+        }
+      }
+    }
+  ]
+}
